@@ -3,8 +3,12 @@
 
 @section('content')
 
+<div class="d-flex justify-content-center">  
 
 <div class="card mb-6">
+    <div class="card-header">
+    Register - ISTIC
+    </div>
     <div class="card-body">
             <form action="#" class="form mb-6" method="POST">
             @csrf
@@ -13,6 +17,13 @@
                     <b>Email:</b>
                 </label>
                 <input name="email" type="text" class="form-control">
+            </div>
+            <br>
+            <div class="form-group">
+                <label class="label">
+                    <b>Username:</b>
+                </label>
+                <input name="username" type="text" class="form-control">
             </div>
             <br>
             <div class="form-group">
@@ -28,13 +39,16 @@
                 </label>
                 <input name="password" type="password" class="form-control">
             </div>
-            <br>
-            <button class="btn btn-md btn-primary">
-            Login
+
+            <button class="btn btn-md btn-primary mb-3">
+            Register Now
             </button>
+            <p class="text-muted">Already have an account? <a href="/auth/login">Login</a></p>
+
         </form>
     </div>
 </div>
 
+</div> 
 
 @endsection
