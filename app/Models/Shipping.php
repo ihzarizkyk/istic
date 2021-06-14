@@ -5,19 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class Shipping extends Model
 {
     use HasFactory;
 
-    protected $table = "products";
+    protected $table = "shipping";
 
     public function user()
     {
         $this->belongsTo(User::class);
     }
 
-    public function shippings()
+    public function product()
     {
-        $this->hasMany(Shipping::class,"product_id");
+        $this->belongsTo(Product::class);
     }
 }
