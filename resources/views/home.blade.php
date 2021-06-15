@@ -13,9 +13,11 @@
     </div>
 
 
-    <div class="row">
-        <div class="col">
-                    <div class="jumbotron">
+    <div class="row bg-secondary">
+
+        <div class="col-12 col-md-6">
+            <div class="card mt-3 mb-1">
+                <div class="card-body">
                     <h1>
                         Cek Resimu
                     </h1>
@@ -25,13 +27,15 @@
                             <input type="search" class="form-control w-50" placeholder="Masukkan Kode Resi" />
                         </div>
                         <input type="submit" name="search" class="btn btn-primary" value="check">
-                    </form>
-                    </div>
+                    </form>            
+                </div>
+            </div>
         </div>
 
-        <div class="col">
-                    <div class="jumbotron">
-                    <h1 class="title">
+        <div class="col-12 col-md-6">
+            <div class="card mt-3 mb-2">
+                <div class="card-body">
+                               <h1 class="title">
                         Harga Pengiriman
                     </h1>
 
@@ -58,8 +62,7 @@
                     </div>
                     <input class="btn btn-info" type="submit" name="cek" value="cek">
                     </form>
-
-                    </div>
+            </div></div>
         </div>
 
     </div>
