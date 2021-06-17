@@ -21,13 +21,6 @@
             <br>
             <div class="form-group">
                 <label class="label">
-                    <b>Username:</b>
-                </label>
-                <input name="username" type="text" class="form-control">
-            </div>
-            <br>
-            <div class="form-group">
-                <label class="label">
                     <b>Fullname</b>
                 </label>
                 <input name="name" type="password" class="form-control">

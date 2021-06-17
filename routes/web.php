@@ -13,3 +13,5 @@ Route::post("/auth/postlogin","AuthController@postlogin");
 
 Route::post("/tracking/resi","TrackingController@track");
 Route::get("/tracking","TrackingController@index");
+
+Route::get("/dashboard/profile","DashboardController@profile");

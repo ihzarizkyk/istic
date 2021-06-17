@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class User
+class Employee
 {
     /**
      * Handle an incoming request.
@@ -17,7 +17,7 @@ class User
      */
     public function handle(Request $request, Closure $next)
     {
-        $authenticate = (Auth::check() && Auth::user()->level == 1);
+        $authenticate = (Auth::check() && Auth::user()->level == 2);
 
         if(!$authenticate)
         {
