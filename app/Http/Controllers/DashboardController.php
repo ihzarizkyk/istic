@@ -14,12 +14,11 @@ class DashboardController extends Controller
 
     public function index()
     {
-        //
+        return view("dashboard.index");
     }
 
-    public function profile($id)
+    public function profile()
     {
-        $user = DB::table("users")->where("id",$id)->get();
-        return view("dashboard.profile.index",["user" => $user]);
+       return view("dashboard.profile.index");
     }
 }

@@ -50,4 +50,12 @@ class AuthController extends Controller
         return redirect("/auth/login");   
     }
 
+    public function logout(Request $req)
+    {
+        Auth::logout();
+        $req->session()->invalidate();
+        $req->session()->regenerateToken();
+        return redirect("/auth/login");
+    }
+
 }

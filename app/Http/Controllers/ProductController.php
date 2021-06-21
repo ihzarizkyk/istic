@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+use App\Models\Product;
 
 class ProductController extends Controller
 {
@@ -13,7 +16,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $product = Auth::user()->products()->get();
+        return view("user.products.index",["produk" => $product]);
     }
 
     /**

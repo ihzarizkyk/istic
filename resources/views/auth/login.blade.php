@@ -13,13 +13,16 @@ Back
             Login - ISTIC
             </div>
             <div class="card-body">
-                    <form action="#" class="form mb-6" method="POST">
+                    <form action="/auth/postlogin" class="form mb-6" method="POST">
                     @csrf
                     <div class="form-group">
                         <label class="label">
                             <b>Email:</b>
                         </label>
                         <input name="email" type="text" class="form-control">
+                        @error('email')
+                        {{$message}}
+                        @enderror
                     </div>
                     <br>
                     <div class="form-group">
@@ -27,9 +30,12 @@ Back
                             <b>Password:</b>
                         </label>
                         <input name="password" type="password" class="form-control">
+                        @error('password')
+                        {{$message}}
+                        @enderror
                     </div>
                     <br>
-                    <button class="btn btn-md btn-primary mb-3">
+                    <button name="login" type="submit" class="btn btn-md btn-primary mb-3">
                     Login
                     </button>
                     <p class="text-muted">don't have any account? <a href="/auth/register">Register</a></p>

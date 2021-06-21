@@ -5,7 +5,10 @@
 
     <div class="jumbotron mb-2">
         <h1>
-            Information System Logistic
+        <span class="material-icons-outlined">
+        shopping_cart
+        </span> 
+        Information System Logistic
         </h1>
         <a class="btn btn-primary" href="/auth/login">
             Getting Started

@@ -4,25 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<title>Profile - ISTIC</title>
 </head>
 <body>
 
 	<div class="container">
-		<div class="card">
+
+	<a href="/auth/logout" class="btn btn-md btn-danger mb-3 mt-3">
+	Logout
+	</a>
+
+		<div class="card mt-3 mb-3">
 			<div class="card-header">
-				Profile User
+			<span class="material-icons-outlined">
+			account_circle
+			</span>
+				Profile User - {{Auth::user()->name}}
 			</div>
 			<div class="card-body">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				<p class="card-text">
+				<b>ID:</b> {{Auth::user()->id}}
+				<br>
+				<b>EMAIL:</b>	{{Auth::user()->email}}
+				<br>
+				<b>LEVEL:</b> {{Auth::user()->level}}
+				</p>
+			</div>
+			<div class="card-footer">
+			<a href="/user/product" class="btn btn-md btn-info">
+			View Order List
+			</a>
 			</div>
 		</div>
+
 	</div>
 
 </body>
