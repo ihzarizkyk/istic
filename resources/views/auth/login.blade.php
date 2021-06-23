@@ -10,7 +10,7 @@ Back
     <div class="d-flex justify-content-center">
             <div class="card mb-6">
             <div class="card-header">
-            Login - ISTIC
+            <!-- <i class="material-icons-outlined">profile_accounts</i>  -->Login - ISTIC
             </div>
             <div class="card-body">
                     <form action="/auth/postlogin" class="form mb-6" method="POST">
@@ -19,7 +19,7 @@ Back
                         <label class="label">
                             <b>Email:</b>
                         </label>
-                        <input name="email" type="text" class="form-control">
+                        <input name="email" type="text" class="form-control" value="{{old('email')}}">
                         @error('email')
                         {{$message}}
                         @enderror

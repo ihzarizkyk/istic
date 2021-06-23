@@ -18,6 +18,6 @@ class Product extends Model
 
     public function shippings()
     {
-        $this->hasMany(Shipping::class,"product_id");
+     return $this->hasMany(Shipping::class,"product_id");
     }
 }

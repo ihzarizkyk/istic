@@ -5,9 +5,9 @@
 
     <div class="jumbotron mb-2">
         <h1>
-        <span class="material-icons-outlined">
+        <i class="material-icons-outlined">
         shopping_cart
-        </span> 
+        </i> 
         Information System Logistic
         </h1>
         <a class="btn btn-primary" href="/auth/login">
