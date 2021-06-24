@@ -49,7 +49,7 @@
             <td>{{$sp->kota_tujuan}}</td>
             <td>{{$sp->biaya_kirim}}</td>
             <td>
-                <a class="btn btn-sm btn-warning">
+                <a href="/dashboard/process/{{$sp->id}}" class="btn btn-sm btn-warning">
                     Proses Pengiriman
                 </a>
             </td>

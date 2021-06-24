@@ -20,6 +20,8 @@ Route::get("/tracking","TrackingController@index");
 
 // Product Routes
 Route::get("/user/product","ProductController@index");
+Route::get("/user/product/cancel/{id}","ProductController@cancel");
 
 Route::get("/dashboard/profile","DashboardController@profile");
 Route::get("/dashboard","DashboardController@index");
+Route::get("/dashboard/process/{id}","DashboardController@process");

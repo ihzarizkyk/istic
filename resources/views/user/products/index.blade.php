@@ -27,6 +27,7 @@
                 <th>Price</th>
                 <th>Quantity</th>
                 <th>Created_at</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -37,6 +38,11 @@
                     <td>Rp{{$p->price}}</td>
                     <td>{{$p->quantity}}</td>
                     <td>{{$p->created_at}}</td>
+                    <td>
+                        <a class="btn btn-md btn-danger" href="/user/product/cancel/{{$p->id}}">
+                            cancel
+                        </a>
+                    </td>
                 </tr>
                 @endforeach 
         </tbody>

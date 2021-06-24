@@ -28,4 +28,16 @@ class DashboardController extends Controller
     {
        return view("dashboard.profile.index");
     }
+
+    public function process(Request $req, $id)
+    {
+        DB::table("shipping")->where("id",$req->id)->update
+        (
+            [
+                "biaya_kirim" => 16000
+            ]
+        );
+
+        return redirect()->back();
+    }
 }
