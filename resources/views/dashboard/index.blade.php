@@ -21,37 +21,47 @@
     <h1>
         {{$product->count()}}
         Products
-        {{$shipcount}}
-        Shipping Products
     </h1>
 
     <table class="table table-striped table-bordered" id="shipping">
         <thead>
             <tr>
                 <th>No</th>
-                <th>Jenis Pengiriman</th>
-                <th>Pengirim</th>
-                <th>Penerima</th>
-                <th>Kota Asal</th>
-                <th>Kota Tujuan</th>
-                <th>Biaya Kirim</th>
+                <th>Produk</th>
+                <th>Resi</th>
+                <th>Persediaan</th>
+                <th>Status</th>
                 <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
-            @foreach($shipping as $sp)
+            @foreach($product as $p)
             <tr>
             <td>{{$loop->iteration}}</td>
-            <td>{{$sp->jenis_pengiriman}}</td>
-            <td>{{$sp->pengirim}}</td>
-            <td>{{$sp->penerima}}</td>
-            <td>{{$sp->kota_asal}}</td>
-            <td>{{$sp->kota_tujuan}}</td>
-            <td>{{$sp->biaya_kirim}}</td>
+            <td>{{$p->nama}}</td>
+            <td>{{$p->resi}}</td>
+            <td>{{$p->quantity}}</td>
+            <td>{{$p->status}}</td>
             <td>
+                @if(Auth::user()->level == 1)
+                -
+                @elseif(Auth::user()->level == 2)
                 <a href="/dashboard/process/{{$sp->id}}" class="btn btn-sm btn-warning">
                     Proses Pengiriman
                 </a>
+                @elseif(Auth::user()->level == 3)
+                <a href="/dashboard/process/{{$sp->id}}" class="btn btn-sm btn-warning">
+                    Proses Pengiriman
+                </a>
+                @elseif(Auth::user()->level == 4)
+                <a href="/dashboard/process/{{$sp->id}}" class="btn btn-sm btn-warning">
+                    Proses Pengiriman
+                </a>
+                @elseif(Auth::user()->level == 5)
+                <a href="/dashboard/process/{{$sp->id}}" class="btn btn-sm btn-warning">
+                    Proses Pengiriman
+                </a>
+                @endif
             </td>
             </tr>
             @endforeach

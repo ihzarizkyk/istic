@@ -44,7 +44,7 @@ class AuthController extends Controller
             "name" => $req->name,
             "email" => $req->email,
             "password" => Hash::make($req->password),
-            "level" => 1
+            "level" => 5
         ]);
 
         return redirect("/auth/login");   
@@ -59,3 +59,13 @@ class AuthController extends Controller
     }
 
 }
+
+/*
+
+Level 1 : ihza rizky , ihzarizky30@gmail.com
+Level 2 : anton, anton@gmail.com
+Level 3 : john, john@gmail.com
+Level 4 : budi, budi@gmail.com
+Level 5 : andi, andi@gmail.com
+
+*/

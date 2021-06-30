@@ -18,10 +18,9 @@ class DashboardController extends Controller
 
     public function index()
     {
-        $shipping = DB::table("shipping")->get();
-        $shipcount = DB::table("shipping")->count();
-        $product = Product::withCount("shippings")->get();
-        return view("dashboard.index",["shipcount" => $shipcount,"product" => $product,"shipping" => $shipping]);
+        $product = DB::table("product")->get();
+        $count = DB::table("product")->count();
+        return view("dashboard.index",["count" => $count,"product" => $product]);
     }
 
     public function profile()
@@ -31,13 +30,40 @@ class DashboardController extends Controller
 
     public function process(Request $req, $id)
     {
-        DB::table("shipping")->where("id",$req->id)->update
+        DB::table("products")->where("id",$req->id)->update
         (
             [
-                "biaya_kirim" => 16000
+                "resi" => Str::random(8),
+                "status" => "sedang dalam proses"
             ]
         );
 
         return redirect()->back();
     }
+
+    public function deliver(Request $req,$id)
+    {
+
+    }
+
+    public function shipp(Request $req,$id)
+    {
+        
+    }
+
+    public function clear(Request $req,$id)
+    {
+        
+    }
+
+    public function confirm(Request $req,$id)
+    {
+        
+    }
+
+    public function report(Request $req,$id)
+    {
+        
+    }
+
 }

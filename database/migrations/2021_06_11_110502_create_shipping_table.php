@@ -17,12 +17,9 @@ class CreateShippingTable extends Migration
             $table->id();
             $table->foreignId("product_id")->nullable();
             $table->foreignId("user_id")->nullable();
-            $table->string("jenis_pengiriman",40);
-            $table->string("pengirim",50);
-            $table->string("penerima",50);
-            $table->string("kota_asal",50);
-            $table->string("kota_tujuan",50);
-            $table->integer("biaya_kirim");
+            $table->string("resi",255)->nullable();
+            $table->string("status",50);
+            $table->text("keterangan");
             $table->timestamps();
         });
     }

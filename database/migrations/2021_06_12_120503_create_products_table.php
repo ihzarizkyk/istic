@@ -19,6 +19,12 @@ class CreateProductsTable extends Migration
             $table->string("name",100);
             $table->integer("price");
             $table->integer("quantity");
+            $table->string("jenis_pengiriman",40);
+            $table->string("pengirim",50);
+            $table->string("penerima",50);
+            $table->string("kota_asal",50);
+            $table->string("kota_tujuan",50);
+            $table->integer("biaya_kirim");
             $table->timestamps();
         });
     }
