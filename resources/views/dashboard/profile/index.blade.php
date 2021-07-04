@@ -38,10 +38,18 @@
 				<br>
 				<b>LEVEL:</b>
 				@if(Auth::user()->level == 1)
-				User
+				Kasir
 				@elseif(Auth::user()->level == 2)
-				Employee
+				Kurir
 				@elseif(Auth::user()->level == 3)
+				Checker
+				@elseif(Auth::user()->level == 4)
+				Driver
+				@elseif(Auth::user()->level == 5)
+				Checker
+				@elseif(Auth::user()->level == 6)
+				User
+				@elseif(Auth::user()->level == 7)
 				Administrator
 				@endif
 				</p>
@@ -49,6 +57,10 @@
 			<div class="card-footer">
 			<a href="/user/product" class="btn btn-md btn-info">
 			View Order List
+			</a>
+			&nbsp;
+			<a href="/user/log" class="btn btn-md btn-warning">
+			View Log Activity History
 			</a>
 			</div>
 		</div>

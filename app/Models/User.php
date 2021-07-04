@@ -53,4 +53,9 @@ class User extends Authenticatable
     {
       return  $this->hasMany(Shipping::class,"user_id");
     }
+
+    public function activities()
+    {
+        return $this->hasMany(LogActivity::class,"user_id");
+    }
 }

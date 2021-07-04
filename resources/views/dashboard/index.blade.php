@@ -18,8 +18,14 @@
         Back
         </a>
 
+        @if(Auth::user()->level == 7)
+        <a href="/dashboard/usermanage" class="btn btn-info mb-3 mt-3">
+        User Management
+        </a>
+        @endif
+
     <h1>
-        {{$product->count()}}
+        {{$count}}
         Products
     </h1>
 
@@ -29,7 +35,8 @@
                 <th>No</th>
                 <th>Produk</th>
                 <th>Resi</th>
-                <th>Persediaan</th>
+                <th>Jumlah</th>
+                <th>Harga</th>
                 <th>Status</th>
                 <th>Aksi</th>
             </tr>
@@ -38,28 +45,31 @@
             @foreach($product as $p)
             <tr>
             <td>{{$loop->iteration}}</td>
-            <td>{{$p->nama}}</td>
+            <td>{{$p->name}}</td>
             <td>{{$p->resi}}</td>
             <td>{{$p->quantity}}</td>
+            <td>{{$p->price}}</td>
             <td>{{$p->status}}</td>
             <td>
                 @if(Auth::user()->level == 1)
-                -
+                <a href="/dashboard/input/{{$p->id}}" class="btn btn-sm btn-info">
+                    Input
+                </a>
                 @elseif(Auth::user()->level == 2)
-                <a href="/dashboard/process/{{$sp->id}}" class="btn btn-sm btn-warning">
-                    Proses Pengiriman
+                <a href="/dashboard/brought/{{$p->id}}" class="btn btn-sm btn-dark">
+                    Brought
                 </a>
                 @elseif(Auth::user()->level == 3)
-                <a href="/dashboard/process/{{$sp->id}}" class="btn btn-sm btn-warning">
-                    Proses Pengiriman
+                <a href="/dashboard/save/{{$p->id}}" class="btn btn-sm btn-light">
+                    Receive in Warehouse
                 </a>
                 @elseif(Auth::user()->level == 4)
-                <a href="/dashboard/process/{{$sp->id}}" class="btn btn-sm btn-warning">
-                    Proses Pengiriman
+                <a href="/dashboard/send/{{$p->id}}" class="btn btn-sm btn-primary">
+                    Send
                 </a>
                 @elseif(Auth::user()->level == 5)
-                <a href="/dashboard/process/{{$sp->id}}" class="btn btn-sm btn-warning">
-                    Proses Pengiriman
+                <a href="/dashboard/receive/{{$p->id}}" class="btn btn-sm btn-success">
+                    Receive
                 </a>
                 @endif
             </td>

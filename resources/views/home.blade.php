@@ -24,10 +24,10 @@
                     <h1>
                         Cek Resimu
                     </h1>
-                    <form class="form" action="#" method="POST">
+                    <form class="form" action="/tracking/resi" method="POST">
                         @csrf
                         <div class="form-group">
-                            <input type="search" class="form-control w-50" placeholder="Masukkan Kode Resi" />
+                            <input name="resi" type="search" class="form-control w-50" placeholder="Masukkan Kode Resi" />
                         </div>
                         <input type="submit" name="search" class="btn btn-primary" value="check">
                     </form>            

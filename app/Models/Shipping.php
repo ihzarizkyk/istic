@@ -13,11 +13,11 @@ class Shipping extends Model
 
     public function user()
     {
-        $this->belongsTo(User::class);
+        $this->belongsTo(User::class,"shipping_id");
     }
 
     public function product()
     {
-        $this->belongsTo(Product::class);
+        $this->belongsTo(Product::class,"id");
     }
 }

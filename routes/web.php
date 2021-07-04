@@ -22,6 +22,14 @@ Route::get("/tracking","TrackingController@index");
 Route::get("/user/product","ProductController@index");
 Route::get("/user/product/cancel/{id}","ProductController@cancel");
 
+// Log History
+Route::get("/user/log","ActivityController@index");
+
 Route::get("/dashboard/profile","DashboardController@profile");
 Route::get("/dashboard","DashboardController@index");
-Route::get("/dashboard/process/{id}","DashboardController@process");
+Route::get("/dashboard/input/{id}","DashboardController@input");
+Route::get("/dashboard/brought/{id}","DashboardController@brought");
+Route::get("/dashboard/save/{id}","DashboardController@save");
+Route::get("/dashboard/send/{id}","DashboardController@send");
+Route::get("/dashboard/receive/{id}","DashboardController@receive");
+Route::get("/dashboard/usermanage","DashboardController@users");
