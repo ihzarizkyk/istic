@@ -35,6 +35,7 @@
                 <th>Name</th>
                 <th>Email</th>
                 <th>Level</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -44,6 +45,11 @@
             <td>{{$usr->name}}</td>
             <td>{{$usr->email}}</td>
             <td>{{$usr->level}}</td>
+            <td>
+                <a class="btn btn-sm btn-danger" href="/dashboard/usermanage/del/{{$usr->id}}">
+                    Remove
+                </a>
+            </td>
             </tr>
             @endforeach
         </tbody>

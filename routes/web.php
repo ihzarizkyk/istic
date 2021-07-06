@@ -33,3 +33,4 @@ Route::get("/dashboard/save/{id}","DashboardController@save");
 Route::get("/dashboard/send/{id}","DashboardController@send");
 Route::get("/dashboard/receive/{id}","DashboardController@receive");
 Route::get("/dashboard/usermanage","DashboardController@users");
+Route::get("/dashboard/usermanage/del/{id}","DashboardController@delusr");

@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\DB;
 class ActivityController extends Controller
 {
 
+    public function __construct()
+    {
+        return $this->middleware(["auth"]);
+    }
+
     public function index()
     {
 

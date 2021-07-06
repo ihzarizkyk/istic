@@ -14,7 +14,7 @@ class DashboardController extends Controller
 {
     public function __construct()
     {
-        //
+        return $this->middleware(["auth"]);
     }
 
     public function index()
@@ -28,6 +28,12 @@ class DashboardController extends Controller
     {
         $usr = DB::table("users")->get();
         return view("dashboard.usermanage",["users" => $usr]);
+    }
+
+    public function delusr($id)
+    {
+        DB::table("users")->where("id",$id)->delete();
+        return redirect()->back();
     }
 
     public function profile()
